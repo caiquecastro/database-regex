@@ -1,0 +1,12 @@
+version: '3.7'
+
+services:
+  database:
+    image: mysql
+    ports:
+      - 3306:3306
+    volumes:
+      - ./scripts.sql:/docker-entrypoint-initdb.d/scripts.sql
+    environment:
+      MYSQL_ROOT_PASSWORD: 'root_pass'
+      MYSQL_DATABASE: test_regex
